@@ -1,0 +1,54 @@
+{
+  "root": true,
+  "extends": [
+    "airbnb"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "globals": {
+    "Drupal": true,
+    "drupalSettings": true,
+    "drupalTranslations": true,
+    "_": true,
+    "Cookies": true,
+    "Backbone": true,
+    "Modernizr": true,
+    "Popper": true,
+    "Shepherd": true,
+    "Sortable": true,
+    "once": true,
+    "CKEDITOR": true,
+    "tabbable": true
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
+  },
+  "rules": {
+    "consistent-return": ["off"],
+    "no-underscore-dangle": ["off"],
+    "max-nested-callbacks": ["warn", 3],
+    "no-plusplus": ["warn", {
+      "allowForLoopAfterthoughts": true
+    }],
+    "no-param-reassign": ["off"],
+    "no-prototype-builtins": ["off"],
+    "valid-jsdoc": ["warn", {
+      "prefer": {
+        "returns": "return",
+        "property": "prop"
+      },
+      "requireReturn": false
+    }],
+    "no-unused-vars": ["warn"],
+    "operator-linebreak": ["error", "after", { "overrides": { "?": "ignore", ":": "ignore" } }],
+    "react/no-danger": 0,
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "import/no-extraneous-dependencies": 0,
+    "react/prefer-stateless-function": 0,
+    "react/function-component-definition": [0]
+  }
+}

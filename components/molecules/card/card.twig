@@ -1,0 +1,22 @@
+<article class="card {{ classes }}" {{ attributes }}>
+  {% include '@atoms/heading/heading.twig' with {
+      text: card_title,
+      level: card_title_level|default('3'),
+    }
+  %}
+  {% if card_subtitle %}
+    {% include '@atoms/heading/heading.twig' with {
+        text: card_subtitle,
+        level: card_subtitle_level|default('4'),
+      }
+    %}
+  {% endif %}
+  {% if card_cta_url %}
+    {% include '@atoms/button/button.twig' with {
+        text: card_cta_text,
+        url: card_cta_url,
+        classes: card_cta_classes,
+      }
+    %}
+  {% endif %}
+</article>

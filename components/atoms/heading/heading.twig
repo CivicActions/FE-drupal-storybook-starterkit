@@ -1,0 +1,7 @@
+<h{{ level|default('2') }} class="heading heading--level-{{ level|default('2') }} {{ classes }}" {{ attributes }}>
+  {%- if url -%}
+    <a href="{{ url }}">{{ text }}</a>
+  {%- else -%}
+    {{ text }}
+  {%- endif -%}
+</h{{ level|default('2') }}>
