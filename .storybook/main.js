@@ -3,12 +3,11 @@ module.exports = {
     builder: 'webpack5',
   },
   "stories": [
-    "../components/**/*.stories.mdx",
-    "../components/**/*.stories.js",
+    "../src/**/*.stories.mdx",
+    "../src/components/**/*.stories.js",
   ],
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    '@storybook/addon-postcss',
   ]
 }

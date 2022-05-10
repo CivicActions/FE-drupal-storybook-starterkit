@@ -1,0 +1,32 @@
+<article class="card {{ classes }}" {{ attributes }}>
+  {% include '@components/heading/heading.twig' with {
+      text: card_title,
+      level: card_title_level|default('3'),
+    }
+  %}
+  {% if card_subtitle %}
+    {% include '@components/heading/heading.twig' with {
+        text: card_subtitle,
+        level: card_subtitle_level|default('4'),
+      }
+    %}
+  {% endif %}
+  {% if card_cta_url %}
+    {% include '@components/button/button.twig' with {
+        text: card_cta_text,
+        url: card_cta_url,
+        classes: card_cta_classes,
+      }
+    %}
+  {% endif %}
+  {% if card_tags %}
+    <ul class="card_tags">
+      {% for tag in card_tags %}
+        <li>
+          <a href="{{ tag.url }}">{{ tag.text}}</a>{% if not loop.last %}, {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  <button class="card__button" data-test="loaded">Test Button</button>
+</article>

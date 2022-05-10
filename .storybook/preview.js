@@ -4,7 +4,11 @@ import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 twigDrupal(Twig);
 
-import '../components/styles.scss';
+// Import compiled USWDS styles.
+import '../node_modules/uswds/dist/css/uswds.min.css';
+import '../src/styles.scss';
+
+window.Drupal = { behaviors: {} };
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

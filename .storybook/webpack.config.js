@@ -8,10 +8,8 @@ module.exports = async ({ config }) => {
     use: "twigjs-loader",
     resolve: {
       alias: {
-        '@atoms': resolve(__dirname, '../', 'components/atoms'),
-        '@molecules': resolve(__dirname, '../', 'components/molecules'),
-        '@organisms': resolve(__dirname, '../', 'components/organisms'),
-        '@templates': resolve(__dirname, '../', 'components/templates'),
+        '@components': resolve(__dirname, '../', 'src/components'),
+        '@uswds': resolve(__dirname, '../', 'node_modules/uswds/src/components'),
       }
     }
   });
@@ -38,7 +36,7 @@ module.exports = async ({ config }) => {
 
   config.plugins.push(
     new ESLintPlugin({
-      context: resolve(__dirname, '../', 'components'),
+      context: resolve(__dirname, '../', 'src'),
       files: '**/*.js',
       failOnError: false,
     }),
