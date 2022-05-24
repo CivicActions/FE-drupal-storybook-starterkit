@@ -1,20 +1,16 @@
-import { addDecorator } from '@storybook/html';
-import { useEffect } from '@storybook/client-api';
-import button from './button.twig';
-import './button';
+import Button from './button.twig';
 
-const styleOptions = { primary: 'button--primary', secondary: 'button--secondary' };
-
-addDecorator((storyFn) => {
-  useEffect(() => Drupal.behaviors.button.attach(document), []);
-  return storyFn();
-});
+const styleOptions = {
+  default: '',
+  secondary: 'button--secondary',
+  tertiary: 'button--tertiary',
+};
 
 /**
  * Storybook Definition.
  */
 export default {
-  component: button,
+  component: Button,
   title: 'Components/Button',
   argTypes: {
     text: {
@@ -26,20 +22,21 @@ export default {
       },
     },
     classes: {
-      options: ['primary', 'secondary'],
+      options: ['default', 'secondary', 'tertiary'],
       mapping: styleOptions,
       control: {
         type: 'select',
         labels: {
-          primary: 'Primary',
+          default: 'Default',
           secondary: 'Secondary',
+          tertiary: 'Tertiary',
         },
       },
     },
   },
 };
 
-const Template = (args) => button(args);
+const Template = (args) => Button(args);
 
 export const Default = Template.bind({});
 Default.args = {

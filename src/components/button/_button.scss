@@ -1,12 +1,40 @@
 .button {
   align-items: center;
-  background: $color-faint-gray;
-  border: 1px solid $color-light-gray;
+  background-color: $color-primary-lt;
+  border: 1px solid $color-primary-dk;
   border-radius: 3px;
-  color: $color-dark-gray;
+  color: $color-primary-dk;
   cursor: pointer;
   display: inline-flex;
   justify-content: center;
   padding: 8px 24px;
   text-decoration: none;
+
+  &.button--primary {
+    background-color: $color-primary-lt;
+    border-color: 1px solid $color-primary-dk;
+    color: $color-primary-dk;
+  }
+
+  &.button--secondary {
+    background-color: $color-secondary-lt;
+    border-color: 1px solid $color-secondary-dk;
+    color: $color-secondary-dk;
+  }
+
+  &.button--tertiary {
+    background-color: $color-tertiary-lt;
+    border-color: 1px solid $color-tertiary-dk;
+    color: $color-tertiary-dk;
+  }
+
+  &[href] {
+    text-decoration-line: underline;
+    text-decoration-style: dotted;
+    text-underline-offset: 2px;
+  }
+
+  &[href]:hover {
+    text-decoration: none;
+  }
 }

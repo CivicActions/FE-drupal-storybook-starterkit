@@ -1,4 +1,68 @@
 .card {
-  border: 1px solid $color-light-gray;
+  border: 1px solid $color-faint-gray;
+  border-radius: 3px;
+  box-shadow: 0 0 8px 0 $color-faint-gray;
   padding: 20px;
+}
+
+.card__links {
+  display: flex;
+  margin-top: 20px;
+  width: 100%;
+
+  + * {
+    margin-top: 20px;
+  }
+}
+
+.card__links-toggle {
+  align-items: center;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  margin: 0;
+  padding: 0;
+
+  &::after {
+    content: '+';
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    transition: transform 100ms ease-in-out;
+  }
+
+  &[aria-expanded='true']::after {
+    transform: rotate(45deg);
+  }
+
+  span {
+    margin-right: 2px;
+  }
+}
+
+.card__links-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  height: 0;
+  list-style: none;
+  margin: 0 0 0 12px;
+  overflow: hidden;
+  padding: 0;
+  width: 0;
+
+  &[aria-hidden='false'] {
+    height: auto;
+    overflow: visible;
+    width: auto;
+  }
+}
+
+.card__link {
+  margin: 0;
+  padding: 0;
+}
+
+.card__link + .card__link {
+  margin-left: 12px;
 }

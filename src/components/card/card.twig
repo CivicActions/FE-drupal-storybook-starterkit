@@ -1,13 +1,16 @@
+{{ attach_library('ca_storybook_starterkit/card')}}
 <article class="card {{ classes }}" {{ attributes }}>
   {% include '@components/heading/heading.twig' with {
       text: card_title,
       level: card_title_level|default('3'),
+      classes: 'font-heading-xl',
     }
   %}
   {% if card_subtitle %}
     {% include '@components/heading/heading.twig' with {
         text: card_subtitle,
         level: card_subtitle_level|default('4'),
+        classes: 'font-heading-lg',
       }
     %}
   {% endif %}
@@ -19,14 +22,38 @@
       }
     %}
   {% endif %}
-  {% if card_tags %}
-    <ul class="card_tags">
-      {% for tag in card_tags %}
-        <li>
-          <a href="{{ tag.url }}">{{ tag.text}}</a>{% if not loop.last %}, {% endif %}
-        </li>
-      {% endfor %}
-    </ul>
+  {% if card_links %}
+    <div class="card__links">
+      <button class="card__links-toggle" aria-controls="card-link-list-{{ card_links_list_id }}" aria-expanded="false"><span>{{ card_links_toggle_text }}</span></button>
+      <ul class="card__links-list" id="card-link-list-{{ card_links_list_id }}" aria-hidden="true">
+        {% for item in card_links %}
+          <li class="card__link">
+            <a href="{{ item.url }}">{{ item.text}}</a>{% if not loop.last %}, {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endif %}
-  <button class="card__button" data-test="loaded">Test Button</button>
+  <div class="usa-accordion">
+  <h4 class="usa-accordion__heading">
+    <button class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="accordion-1">
+      USWDS Accordion One
+    </button>
+  </h4>
+  <div id="accordion-1" class="usa-accordion__content usa-prose" hidden>
+    <p>Curabitur blandit tempus porttitor. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+  </div>
+  <h4 class="usa-accordion__heading">
+    <button class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="accordion-2">
+      USWDS Accordion Two
+    </button>
+  </h4>
+  <div id="accordion-2" class="usa-accordion__content usa-prose" hidden>
+    <p>Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper.</p>
+  </div>
+</div>
 </article>

@@ -7,7 +7,7 @@
     "build": "webpack --config ./webpack/webpack.prod.js",
     "develop": "concurrently --raw \"npm run webpack\" \"npm run storybook\"",
     "storybook": "start-storybook --ci -s ./dist,./images -p 6006",
-    "storybook-build": "npm run build && build-storybook -s ./dist,./images -o .out",
+    "storybook-build": "npm run build && build-storybook -s ./dist -o .out",
     "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch --config ./webpack/webpack.dev.js"
   },
@@ -52,7 +52,7 @@
     "twig": "^1.15.4",
     "twig-drupal-filters": "^3.1.2",
     "twigjs-loader": "^1.0.2",
-    "uswds": "^2.12.2",
+    "uswds": "^2.13.3",
     "webpack": "^5.62.1",
     "webpack-cli": "^4.9.2",
     "webpack-merge": "^5.8.0"

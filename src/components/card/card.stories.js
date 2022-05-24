@@ -1,10 +1,12 @@
 import { addDecorator } from '@storybook/html';
 import { useEffect } from '@storybook/client-api';
 import Component from './card.twig';
+// Import component's Drupal-scoped js file.
 import './card';
 
+// Include Drupal-scoped js in component display.
 addDecorator((storyFn) => {
-  useEffect(() => Drupal.behaviors.card.attach(document), []);
+  useEffect(() => Drupal.behaviors.card.attach(document));
   return storyFn();
 });
 
@@ -24,8 +26,10 @@ StandardCard.args = {
   card_subtitle: 'Card subtitle',
   card_cta_url: '#',
   card_cta_text: 'Card CTA',
-  card_tags: [
-    { url: '#', text: 'Tag 1' },
-    { url: '#', text: 'Tag2' },
+  card_links_toggle_text: 'Links',
+  card_links_list_id: 'tag-list',
+  card_links: [
+    { url: '#', text: 'Pellentesque Tellus' },
+    { url: '#', text: 'Justo Venenatis' },
   ],
 };
