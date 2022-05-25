@@ -6,4 +6,6 @@ This is a starterkit for setting up a component-based, Drupal 9+ theme with Stor
 - Ensure you're using the correct node/npm version. Run: `nvm use`
 - Install dependencies: `npm install`
 - Run an initial build to set up required font/image assets from USWDS: `npm run build`
-- Launch Storybook and start developing: `npm run develop` 
+- Launch Storybook and start developing: `npm run develop`
+
+[View a sample of the Storybook UI](https://civicactions.github.io/FE-drupal-storybook-starterkit/).
