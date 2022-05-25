@@ -7,6 +7,11 @@ global-styling:
       node_modules/uswds/dist/css/uswds.min.css: {}
     component:
       dist/css/styles.css: {}
+  js:
+    # node_modules is gitignored, so assumes 
+    # npm packages are installed on the server.
+    node_modules/uswds/dist/js/uswds-init.min.js: {}
+    node_modules/uswds/dist/js/uswds.min.js: {}
 
 card:
   js:
