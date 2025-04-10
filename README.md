@@ -1,5 +1,7 @@
 # CivicActions Storybook-based Drupal Theme Starterkit
 
+**THIS REPO IS NOW ARCHVIED**
+
 This is a starterkit for setting up a component-based, Drupal 9+ theme with Storybook serving as the pattern library/design system documentation, and testing framework. This starterkit also makes use of the USWDS as its foundation.
 
 # Setup
